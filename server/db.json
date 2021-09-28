@@ -1,0 +1,22 @@
+{
+    "getBanks": {
+        "length": 3,
+        "banks": [
+            {
+                "id": 1,
+                "name": "Banco de Chile"
+            },
+            {
+                "id": 2,
+                "name": "Banco Estado"
+            },
+            {
+                "id": 3,
+                "name": "Banco Santander"
+            }
+        ]
+    },
+    "getCurency": {
+        
+    }
+}
