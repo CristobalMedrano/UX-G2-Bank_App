@@ -4,6 +4,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: "static",
 
+  ssr: "false",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: "%s - G2-UX-Front",
@@ -38,16 +39,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
     // https://firebase.nuxtjs.org/guide/getting-started
     "@nuxtjs/firebase",
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    baseURL: "http://localhost:5000",
-  },
 
   firebase: {
     config: {
@@ -65,6 +59,8 @@ export default {
         emulatorHost: "localhost",
       },
     },
+    onFirebaseHosting: true,
+    terminateDatabasesAfterGenerate: true,
   },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
@@ -89,5 +85,5 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  loading: "~/components/app/TheLoading.vue",
+  loading: "~/components/App/TheLoading.vue",
 };

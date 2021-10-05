@@ -26,6 +26,11 @@
         <v-btn color="primary" @click="onLoading">Loading</v-btn>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col cols="12" class="d-flex justify-center">
+        <v-btn color="primary" nuxt to="/recursos/crud">Firebase</v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
