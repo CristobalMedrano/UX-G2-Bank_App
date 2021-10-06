@@ -1,11 +1,9 @@
 <template>
-  <VueSlickCarousel v-bind="settings">
+      <VueSlickCarousel  class="center rounded-pill"  v-bind="settings">
+    <div ><img  class="center" src="https://i.ibb.co/b17FRsD/technology-4256272-1920.jpg" ></div>
+    <div ><img   class="center" src="https://i.ibb.co/v1J6N9n/pexels-sora-shimazaki-5668859.jpg"></div>
+    </VueSlickCarousel>
 
-
-    <div><img src="https://picsum.photos/300/300" /></div>
-    <div class="text-center"><img src="https://i.ibb.co/b17FRsD/technology-4256272-1920.jpg" ></div>
-    <div class="text-center"><img  src="https://i.ibb.co/v1J6N9n/pexels-sora-shimazaki-5668859.jpg"></div>
-  </VueSlickCarousel>
 
 </template>
  
@@ -34,3 +32,12 @@
     }
   }
 </script> 
+
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+}
+</style>

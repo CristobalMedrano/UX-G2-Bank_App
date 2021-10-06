@@ -4,21 +4,9 @@
         flat
         tile
         width="100%"
-        color="#339CFF"
+        color="#023047"
         class=" lighten-1 text-center"
       >
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4"
-            icon
-          >
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-text>
 
         
 

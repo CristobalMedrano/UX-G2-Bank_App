@@ -20,12 +20,12 @@
     color : #FEF9FF ;
 }
 .button-blue{
-    border: 3px solid #FEF9FF;
+    border: 1px solid #FEF9FF;
     background-color: #193866;
     color : #FEF9FF;
 }
 .button-blue:hover{
-    border: 3px solid #193866;
+    border: 1px solid #193866;
     background-color: #FEF9FF;
     color : #193866;
 }

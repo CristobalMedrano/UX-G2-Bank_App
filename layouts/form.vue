@@ -20,11 +20,11 @@ export default {
       drawer: false,
       fixed: false,
       colors: {
-        colorNav : '#193866',
+        colorNav : '#E1E5F2',
         colorButton1 : '',
-        colorText : '',
-        mode : 'home'
-      },
+        colorText : '#193866',
+        mode : 'form'
+        },
       items: [
         {
           icon: "mdi-apps",
