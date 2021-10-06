@@ -7,8 +7,8 @@ export default {
   ssr: "false",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: "%s - G2-UX-Front",
-    title: "G2-UX-Front",
+    titleTemplate: "%s - Quickness",
+    title: "Terminal Bancaria",
     htmlAttrs: {
       lang: "en",
     },
