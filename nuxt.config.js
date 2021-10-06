@@ -22,7 +22,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/css/colors.css',
+        '~/assets/css/bootstrap.min.css',
+        '~/assets/css/bootstrap.css'],
+  js: ['~/assets/js/bootstrap.min.js'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: "~/plugins/notifier", mode: "client" }],
@@ -76,7 +79,7 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          success: colors.green.accent3
         },
       },
     },
