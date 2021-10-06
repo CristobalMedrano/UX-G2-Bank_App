@@ -5,7 +5,9 @@
     height="6em"
     hover
     ripple
-    @click="onClick"
+    nuxt-link
+    :to="url"
+    exact
   >
     <v-col cols="2"
       ><v-icon large>{{ icon }}</v-icon></v-col
@@ -30,10 +32,9 @@ export default {
       type: String,
       default: "mdi-account",
     },
-  },
-  methods: {
-    onClick() {
-      this.$emit("click");
+    url: {
+      type: String,
+      default: "/intranet",
     },
   },
 };

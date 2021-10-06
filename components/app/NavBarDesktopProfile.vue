@@ -15,7 +15,6 @@
         <v-card
           ripple
           flat
-          hover
           class="
             ma-0
             pa-0
