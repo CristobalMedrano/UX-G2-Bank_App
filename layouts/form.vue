@@ -1,13 +1,14 @@
 <template>
   <v-app dark>
     <v-main>
-      <AppNavbar :colors="colors" />
+      <AppNavbar :colors = colors />
       <v-container fluid>
         <AppSnackbar />
         <Nuxt />
       </v-container>
+
     </v-main>
-    <AppFooter />
+      <AppFooter />
   </v-app>
 </template>
 
@@ -19,11 +20,11 @@ export default {
       drawer: false,
       fixed: false,
       colors: {
-        colorNav: "#193866",
-        colorButton1: "",
-        colorText: "",
-        mode: "home",
-      },
+        colorNav : '#E1E5F2',
+        colorButton1 : '',
+        colorText : '#193866',
+        mode : 'form'
+        },
       items: [
         {
           icon: "mdi-apps",

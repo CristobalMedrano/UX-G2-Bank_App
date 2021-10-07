@@ -1,0 +1,58 @@
+.prussian-blue{
+    background-color: #193866;
+    color : #FEF9FF;
+}
+.celeste{
+    background-color: #1F7A8C;
+}
+.celeste-claro{
+    background-color: #BFDBF7;
+}
+.indigo{
+    background-color: #1B4965
+}
+.blanco{
+    background-color: #FEF9FF;
+    color : #000000 ;
+}
+.blanco:hover{
+    background-color: #B2D5E8;
+    color : #FEF9FF ;
+}
+.button-blue{
+    border: 1px solid #FEF9FF;
+    background-color: #193866;
+    color : #FEF9FF;
+}
+.button-blue:hover{
+    border: 1px solid #193866;
+    background-color: #FEF9FF;
+    color : #193866;
+}
+.color1{
+    background-color: #CAE9FF;
+}
+.color2{
+    background-color: #E1E5F2;
+}
+.color3{
+    background-color: #5FA8D3;
+}
+.color4{
+    background-color: #BEE9E8;
+}
+.color5{
+    background-color: #62B6CB;
+}
+.color6{
+    background-color: #001D4B;
+}
+.color7{
+    background-color: #005FF9;
+}
+.color8{
+    background-color: #00377E;
+}
+.color9{
+    background-color: #FFFFE5;
+}
