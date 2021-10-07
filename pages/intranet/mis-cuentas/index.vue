@@ -1,6 +1,22 @@
 <template>
   <div>
-    <v-container fluid>
+    <v-container>
+      <v-row no-gutters>
+        <v-col
+          v-for="(account, index) in loadedAccounts"
+          :key="index"
+          cols="12"
+        >
+          <v-card class="rounded-lg mt-2">
+            <v-card-title
+              ><v-icon left>mdi-bank</v-icon> {{ account.name }}</v-card-title
+            >
+            <v-card-subtitle>${{ account.balance }}</v-card-subtitle>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <!--<v-container fluid>
       <v-data-iterator
         :items="items"
         :items-per-page.sync="itemsPerPage"
@@ -9,12 +25,8 @@
         :sort-desc="sortDesc"
         hide-default-footer
       >
-        <template v-slot:header>
-          <v-toolbar
-            dark
-            color="blue darken-3"
-            class="mb-1"
-          >
+        <template #header>
+          <v-toolbar dark color="blue darken-3" class="mb-1">
             <v-text-field
               v-model="search"
               clearable
@@ -26,12 +38,11 @@
             ></v-text-field>
             <template v-if="$vuetify.breakpoint.mdAndUp">
               <v-spacer></v-spacer>
-              
             </template>
           </v-toolbar>
         </template>
-  
-        <template v-slot:default="props">
+
+        <template #default="props">
           <v-row>
             <v-col
               v-for="item in props.accounts"
@@ -45,39 +56,34 @@
                 <v-card-title class="subheading font-weight-bold">
                   {{ item.number }}
                 </v-card-title>
-  
+
                 <v-divider></v-divider>
-  
+
                 <v-list dense>
                   <v-list-item>
                     <v-list-item-content>Banco:</v-list-item-content>
                     <v-list-item-content class="align-end">
                       {{ item.name }}
                     </v-list-item-content>
-                  </v-list-item> 
+                  </v-list-item>
 
                   <v-list-item>
                     <v-list-item-content>Saldo:</v-list-item-content>
                     <v-list-item-content class="align-end">
                       {{ item.balance }}
                     </v-list-item-content>
-                  </v-list-item> 
-
+                  </v-list-item>
                 </v-list>
               </v-card>
             </v-col>
           </v-row>
         </template>
-  
-        <template v-slot:footer>
-          <v-row
-            class="ma-4"
-            align="center"
-            justify="center"
-          >
+
+        <template #footer>
+          <v-row class="ma-4" align="center" justify="center">
             <span class="grey--text">Elementos por página</span>
             <v-menu offset-y>
-              <template v-slot:activator="{ on, attrs }">
+              <template #activator="{ on, attrs }">
                 <v-btn
                   dark
                   text
@@ -100,13 +106,10 @@
                 </v-list-item>
               </v-list>
             </v-menu>
-  
+
             <v-spacer></v-spacer>
-  
-            <span
-              class="mr-4
-              grey--text"
-            >
+
+            <span class="mr-4 grey--text">
               Página {{ page }} de {{ numberOfPages }}
             </span>
             <v-btn
@@ -130,13 +133,58 @@
           </v-row>
         </template>
       </v-data-iterator>
-    </v-container>
+    </v-container>-->
   </div>
 </template>
 
 <script>
 export default {
   layout: "intranet",
+  data() {
+    return {
+      itemsPerPageArray: [4, 8, 12],
+      search: "",
+      filter: {},
+      sortDesc: false,
+      page: 1,
+      itemsPerPage: 4,
+      sortBy: "number",
+      keys: ["Number", "Name", "Balance"],
+      items: [
+        {
+          number: "56546-54435-45664-445543",
+          name: "Banco Estado",
+          balance: "$2.000.000",
+        },
+        {
+          number: "43546-54435-45664-445543",
+          name: "Banco Santander",
+          balance: "$5.000.000",
+        },
+        {
+          number: "56546-54435-45664-445543",
+          bank: "Banco Estado",
+          balance: "$2.000.000",
+        },
+        {
+          number: "43546-54435-45664-445543",
+          bank: "Banco Santander",
+          balance: "$5.000.000",
+        },
+        {
+          number: "56546-54435-45664-445543",
+          bank: "Banco Estado",
+          balance: "$2.000.000",
+        },
+        {
+          number: "43546-54435-45664-445543",
+          bank: "Banco Santander",
+          balance: "$5.000.000",
+        },
+      ],
+      loadedAccounts: {},
+    };
+  },
   head() {
     return {
       title: "Mis Cuentas",
@@ -149,96 +197,55 @@ export default {
       ],
     };
   },
-  data () {
-    return {
-      itemsPerPageArray: [4, 8, 12],
-      search: '',
-      filter: {},
-      sortDesc: false,
-      page: 1,
-      itemsPerPage: 4,
-      sortBy: 'number',
-      keys: [
-        'Number',
-        'Name',
-        'Balance',
-      ],
-      items: [
-        {
-          number: '56546-54435-45664-445543',
-          name: 'Banco Estado',
-          balance: '$2.000.000',
-        },
-        {
-          number: '43546-54435-45664-445543',
-          name: 'Banco Santander',
-          balance: '$5.000.000',
-        },
-        {
-          number: '56546-54435-45664-445543',
-          bank: 'Banco Estado',
-          balance: '$2.000.000',
-        },
-        {
-          number: '43546-54435-45664-445543',
-          bank: 'Banco Santander',
-          balance: '$5.000.000',
-        },
-        {
-          number: '56546-54435-45664-445543',
-          bank: 'Banco Estado',
-          balance: '$2.000.000',
-        },
-        {
-          number: '43546-54435-45664-445543',
-          bank: 'Banco Santander',
-          balance: '$5.000.000',
-        },
-      ],
-      accouts: {},
-    }
-  },
   computed: {
-    numberOfPages () {
-      return Math.ceil(this.items.length / this.itemsPerPage)
+    numberOfPages() {
+      return Math.ceil(this.items.length / this.itemsPerPage);
     },
-    filteredKeys () {
-      return this.keys.filter(key => key !== 'Number')
+    filteredKeys() {
+      return this.keys.filter((key) => key !== "Number");
     },
+  },
+  async created() {
+    await this.getCuentas();
   },
   methods: {
-    nextPage () {
-      if (this.page + 1 <= this.numberOfPages) this.page += 1
+    nextPage() {
+      if (this.page + 1 <= this.numberOfPages) this.page += 1;
     },
-    formerPage () {
-      if (this.page - 1 >= 1) this.page -= 1
+    formerPage() {
+      if (this.page - 1 >= 1) this.page -= 1;
     },
-    updateItemsPerPage (number) {
-      this.itemsPerPage = number
+    updateItemsPerPage(number) {
+      this.itemsPerPage = number;
     },
-    async getCuentas()
-    {
-      const collectionRef = this.$fire.firestore.collection(
+    async getCuentas() {
+      /* const collectionRef = this.$fire.firestore.collection(
         "/Clients/gSQIY0xNb8fs49dGiYf6/accounts"
-      );
+      ); */
 
+      const documentRef = this.$fire.firestore
+        .collection("Clients")
+        .doc("gSQIY0xNb8fs49dGiYf6");
       try {
-        const accountCargadas = [];
-        const accountRef = await collectionRef.get();
-        for (const account of accountRef.docs) {
+        const loadedAccounts = [];
+        const clientDocument = await documentRef.get();
+        console.log(clientDocument.data().accounts);
+        for (const account of clientDocument.data().accounts) {
+          loadedAccounts.push(account);
+        }
+        this.loadedAccounts = loadedAccounts;
+
+        /* for (const account of accountRef.docs) {
           console.log(account.data());
           console.log(account.id);
-          accountCargadas.push({ ...account.data(), id: account.id });
-          this.accouts = accountCargadas;
-          console.log(accountCargadas);
-        }
+          // loadedAccounts.push({ ...account.data(), id: account.id });
+          // this.accouts = loadedAccounts;
+          // console.log(loadedAccounts);
+        } */
       } catch (error) {
         console.log(error);
       }
     },
-  },
-  mounted() {
-    this.getCuentas();
   },
 };
 </script>
