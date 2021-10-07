@@ -1,43 +1,40 @@
 <template>
-      <VueSlickCarousel  class="center rounded-pill"  v-bind="settings">
-    <div ><img  class="center" src="https://i.ibb.co/b17FRsD/technology-4256272-1920.jpg" ></div>
-    <div ><img   class="center" src="https://i.ibb.co/v1J6N9n/pexels-sora-shimazaki-5668859.jpg"></div>
-    </VueSlickCarousel>
-
-
+  <div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8 center text-center">
+        <v-carousel height="400" max-width="100" hide-delimiter-background show-arrows-on-hover cycle>
+          <v-carousel-item class="center">
+            <img class="center" src="https://i.ibb.co/b17FRsD/technology-4256272-1920.jpg"> </img>
+          </v-carousel-item>
+          <v-carousel-item>
+            <img src="https://i.ibb.co/v1J6N9n/pexels-sora-shimazaki-5668859.jpg"> </img>
+          </v-carousel-item>
+        </v-carousel>
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div>
 </template>
- 
-<script>
-  import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
- 
-  export default {
-    name: 'MyComponent',
-    components: { VueSlickCarousel },
-    data(){
-      return {
-        settings:  {
-          "dots": true,
-          "fade": true,
-          "infinite": true,
-          "speed": 500,
-          "slidesToShow": 1,
-          "slidesToScroll": 1,
-          "autoplay": true,
-          "autoplaySpeed": 1000,
-        }
-      
-      }
-    }
-  }
-</script> 
 
-<style>
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-}
-</style>
+<script>
+  export default {
+    /*
+          v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+    */
+    data() {
+      return {
+        items: [{
+            src: "https://i.ibb.co/b17FRsD/technology-4256272-1920.jpg",
+          },
+          {
+            src: "https://i.ibb.co/v1J6N9n/pexels-sora-shimazaki-5668859.jpg"
+          },
+        ],
+      }
+    },
+  }
+
+</script>

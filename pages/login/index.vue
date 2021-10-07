@@ -1,12 +1,11 @@
 <template>
     <div>
-        {{colorNav}}
+       <FormLogin /> 
     </div>
 </template>
     
 <script>
 export default{
     layout: 'form'
-    
 }
 </script>
