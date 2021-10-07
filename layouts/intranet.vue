@@ -26,19 +26,14 @@ export default {
     items: {
       accounts: {
         text: "Mis cuentas",
-        icon: "mdi-piggy-bank-outline",
+        icon: "mdi-credit-card-multiple-outline",
         url: "/intranet/mis-cuentas",
       },
-      transactions: {
+      /* transactions: {
         text: "Transacciones",
         icon: "mdi-history",
         url: "/intranet/transacciones",
-      },
-      contacts: {
-        text: "Contactos",
-        icon: "mdi-account-multiple",
-        url: "/intranet/contactos",
-      },
+      }, */
       pay: {
         text: "Pagar",
         icon: "mdi-currency-usd",
@@ -49,6 +44,7 @@ export default {
   methods: {
     logout() {
       console.log("Saliendo..");
+      this.$router.push("/");
     },
   },
 };
