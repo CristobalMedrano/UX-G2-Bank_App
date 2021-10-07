@@ -1,17 +1,23 @@
 <template>
   <div>
     <v-container>
-      <v-row no-gutters>
+      <div class="mx-4 text-h6">
+        <v-icon>mdi-credit-card</v-icon> Cuentas guardadas
+      </div>
+      <v-divider class="mx-4 my-2"></v-divider>
+      <v-row no-gutters class="mx-4">
         <v-col
           v-for="(account, index) in loadedAccounts"
           :key="index"
           cols="12"
         >
-          <v-card class="rounded-lg mt-2">
+          <v-card hover ripple outlined class="rounded-lg mt-2">
             <v-card-title
               ><v-icon left>mdi-bank</v-icon> {{ account.name }}</v-card-title
             >
-            <v-card-subtitle>${{ account.balance }}</v-card-subtitle>
+            <v-card-subtitle class="text-h6"
+              >Balance: ${{ account.balance }}</v-card-subtitle
+            >
           </v-card>
         </v-col>
       </v-row>
@@ -205,8 +211,16 @@ export default {
       return this.keys.filter((key) => key !== "Number");
     },
   },
-  async created() {
-    await this.getCuentas();
+  created() {
+    this.$nextTick(async () => {
+      if (this.$nuxt.$loading !== undefined) {
+        this.$nuxt.$loading.start();
+      }
+      await this.getCuentas();
+      if (this.$nuxt.$loading !== undefined) {
+        this.$nuxt.$loading.finish();
+      }
+    });
   },
   methods: {
     nextPage() {
